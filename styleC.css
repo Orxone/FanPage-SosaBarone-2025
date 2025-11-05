@@ -10,7 +10,7 @@ header{
     position:fixed;
     width: 100%;
     padding: 25px 12.5%;
-    background-color: #0468BF;
+    backdrop-filter: blur(8px);
     display: flex;
     justify-content: space-between;
     align-items: center;
