@@ -1,113 +1,145 @@
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    border: none;
-    outline: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-body{
+header{
+    position:fixed;
+    width: 100%;
+    padding: 25px 12.5%;
+    background-color: #0468BF;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
-    line-height: 25px;
+    z-index: 100;
+
+}
+
+/*BARRA DE NAVEGACIÓN*/
+.navbar a{ /*Los links*/
+    position: relative;
+    font-size: 16px;
     color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.navbar a::after{ /*Lineas encima de los links*/
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background-color: #05DBF2;
+    border-radius: 5px;
+    transform: translateY(10px); /*Posición en la que van a estar*/
+    transition: .5s; /*Hace que la linea suba para arriba, a su otra posición*/
+    opacity: 0; /*Da el efecto de aparición*/
+}
+
+.navbar a:hover::after{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar{ /*Espacio general de la barra*/
+    font-size: 16px;
+    color:#05DBF2;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+body{
     background-image: url(https://i.redd.it/czdysgivyau41.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
     background-size: cover;
 }
 
-/*Indice*/
-nav a{
-    border-bottom: 3px solid transparent;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    padding: 2px;
-    border-radius: 5px;
-    border-bottom: 5px solid #05DBF2;
+main { /*Contenido de la pestaña*/
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.comment-box{ /*Contenido de la caja de comentarios*/
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 30rem;
+    background-color: #0468BF;
     color: white;
 }
 
-nav a:hover,
-nav a:active{
-    border-bottom: 3px solid #05DBF2;
-    color: #A6806A;
+/**/
+
+.input-box{ /*Contenedores de opciones*/
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid white; /*La linea blanca debajo de las opciones*/
+    margin: 30px 0;
 }
 
-header{
-    background-color: #0468BF;
-    align-self: baseline;
-    position: fixed;
+.input-box input{ /*Zona para escribir y texto dentro*/
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
 }
 
-.homeContent{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.box{
-    width: 420px;
-    background-color: #3a3f7f;
-    color: #fff;
-    border-radius: 10px;
-    padding: 30px 40px;
-}
-
-/*Send me a Comment!*/
-.box h1 {
-    font-size: 36px;
-    text-align: center;
-}
-
-.box .input-box{
-   position: relative;
-   width: 100%; 
-   height: 30px;
-   margin: 30px 0;
-   padding: 20px 45px 20px 20px;
-}
-
-.input-box{
+.input-box label{
     position: absolute;
-    right: 20px;
     top: 50%;
-    font-size: 20px;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease; /*Transcision smooth entre titulo y barra para escribir*/
 }
 
-.box textarea{
+.input-box input:focus~label, 
+.input-box input:valid~label{ /*Para que deje espacio para escribir debajo del título de la opción*/
+    top: -5px;
+}
+
+.comment-space{
+    padding: 5px;
+}
+
+.comment-space textarea{ /*Area para el comentario*/
+    width: 350px;
     resize: none; /*Deshabilita la redimensión del cuadro de texto*/
+    font-size: 16px;
 }
 
-.box .boton{ 
-    width: 50%;
-    height: 45px;
-    background-color: white ;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+.btn{ /*Botón de Enviar*/
+    width: 100%;
+    height: 35px;
+    margin-top: 1rem;
+    background-color: green;
+    color: white;
     cursor: pointer;
     font-size: 16px;
-    color: #333;
-    font-weight: 600;
-    margin: 20px 0 15px;
+    font-weight: 500;
+    border: none;
 }
 
-/*Boton de Submit cuando se le pasa el mouse por encima*/
-.box .boton:hover{
-    color: #05DBF2;
-    outline: #05DBF2;
-    outline-width: 2px;
-    outline-style: auto;
+.btn:hover{
+    background-color: #05DBF2;
 }
 
-footer{
-    align-self: end;
-    position: fixed;
-    text-align: left;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    width: 99%;
-    background-color: #0468BF;
-}

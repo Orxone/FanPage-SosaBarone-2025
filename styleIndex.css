@@ -1,80 +1,245 @@
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-body{
-
-    text-align: center;
-    line-height: 25px;
-    background-color: #2B4C8C;
-    color: white;
-}
-
-/*Indice*/
-nav a{
-    border-bottom: 3px solid transparent;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    padding: 2px;
-    border-radius: 5px;
-    border-bottom: 5px solid #05DBF2;
-    color: white;
-}
-
-nav a:hover,
-nav a:active{
-    border-bottom: 3px solid #05DBF2;
-    color: #A6806A;
-}
-
 header{
-    background-color: #0468BF;
-}
-
-main h1{
-    font-size: 36px;
-    padding: 1rem 9%;
-}
-
-main h2 img{
-    width: 700px;
-    height: 400px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-.homeContent{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.homeContent p{
-    font-size: 18px;
-}
-
-.subtitulo{
-    font-weight: 600;
-}
-
-.poster{
-    height: 600px;
-}
-
-.mySection{
-    font-size: 18px;
-    font-style: italic;
-}
-
-.bunnyOri{
-    height: 400px;
-    margin: 10px;
-}
-
-footer{
-    margin-bottom: 5px;
-    margin-left: 5px;
-    width: 99%;
-    background-color: #0468BF;
+    position:fixed;
+    width: 100%;
+    padding: 25px 12.5%;
+    background-color: transparent;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+
+/*BARRA DE NAVEGACIÓN*/
+.navbar a{ /*Los links*/
+    position: relative;
+    font-size: 16px;
+    color: #05DBF2;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.navbar a::after{ /*Lineas encima de los links*/
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background-color: #05DBF2;
+    border-radius: 5px;
+    transform: translateY(10px); /*Posición en la que van a estar*/
+    transition: .5s; /*Hace que la linea suba para arriba, a su otra posición*/
+    opacity: 0; /*Da el efecto de aparición*/
+}
+
+.navbar a:hover::after{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar{ /*Espacio general de la barra*/
+    font-size: 16px;
+    color:#05DBF2;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*Para que este en el medio*/
+    width: 100%; /*Que ocupe el máximo ancho*/
+    height: 100%;
+    background: url(img/DateNight.png) no-repeat;
+    background-size: cover;
+}
+
+.container .content{ /*Explicación de la página*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    padding: 10rem; /*Para posicionar el texto en el centro de su contenedor*/
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.content .copyright{ /*Copyright de creador*/
+    font-size: 25px;
+}
+
+.textoBienvenida h2{
+    font-size: 40px;
+    line-height: 1;
+}
+
+.textoBienvenida h2 span{
+    font-size: 25px;
+}
+
+.textoBienvenida p{
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.container .logreg-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    color: white;
+    overflow: hidden;
+}
+
+.logreg-box .form-box{ /*Contenido de la parte de ingresar y registrarse*/
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    border-top-right-radius: 10px; 
+    border-bottom-right-radius: 10px;
+}
+
+/*Javascript*/
+.logreg-box .form-box.login{
+    transform: translateX(0);
+    transition: transform .6s ease;
+    transition-delay: .5s;
+}
+
+.logreg-box.active .form-box.login{
+    transform: translateX(100%);
+    transition-delay: 0s;
+}
+
+.logreg-box .form-box.register{ /*Poner la sección de registrarse al lado de la de ingreso*/
+    transform: translateX(100%);
+    transition: transform .6s ease;
+    transition-delay: 0s;
+}
+
+.logreg-box.active .form-box.register{
+    transform: translateX(0);
+    transition-delay: .5s;
+}
+
+/**/
+
+.form-box h2{ /*Título*/
+    font-size: 32px;
+    text-align: center;
+}
+
+.form-box .input-box{ /*Contenedores de opciones*/
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid white; /*La linea blanca debajo de las opciones*/
+    margin: 30px 0;
+}
+
+.input-box input{ /*Zona para escribir y texto dentro*/
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease; /*Transcision smooth entre titulo y barra para escribir*/
+}
+
+.input-box input:focus~label, 
+.input-box input:valid~label{ /*Para que deje espacio para escribir debajo del título de la opción*/
+    top: -5px;
+}
+
+.input-box .icon{
+    transform: scale(50%); /*Para ajustar el tamaño de la imagen*/
+    position: absolute;
+    top: 2px; /*Separación con la linea*/
+    right: 0;
+    font-size: 19px;
+}
+
+.form-box .remember-forgot{
+    font-size: 15px;
+    font-weight: 500;
+    margin: -15px 0 15px; /*Para que se acerce más a la linea blanca*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    accent-color: white;
+    margin-right: 3px;
+}
+
+.remember-forgot a{ /*Contraseña olvidada*/
+    color: goldenrod;
+}
+
+.remember-forgot a:hover{ /*Contraseña olvidada*/
+    text-decoration: underline;
+}
+
+.btn{ /*Botón de Ingresar*/
+    width: 100%;
+    height: 35px;
+    background-color: black;
+    color: white;
+    border: 0.1rem solid grey;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.form-box .login-register{
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.login-register p a{ /*Registrarse*/
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-register p a:hover{ /*Cuando pasa el cursor por encima de Registrarse*/
+    text-decoration: underline;
+    color: goldenrod;
 }
