@@ -64,6 +64,17 @@ header{
     margin-right: 30px;
 }
 
+#burger-btn {
+    font-size: 3rem;
+    cursor: pointer;
+    display: none;
+    margin-left: 1.5rem;
+}
+
+main{
+    padding-top: 3rem;
+}
+
 main h1{
     font-size: 36px;
     padding: 1rem 9%;
@@ -102,11 +113,14 @@ th{
     font-weight: bold;
 }
 
+td{
+    text-align: center;
+}
+
 td img{
-    padding: 5px;
-    margin: 10px;
     width: 700px;
     height: 400px;
+    text-align: center;
 }
 
 td img:hover{
@@ -133,4 +147,113 @@ footer{
     backdrop-filter: blur(15px);
     display: flex;
     padding-left: 15px;
+}
+
+/*MEDIA QUERY*/
+
+@media (max-width:1400px){
+    img{
+        width: 85%;
+        height: 85%;
+    }
+
+    td img{
+        width: 85%;
+        height: 85%;
+    }
+}
+
+@media (max-width:1300px) {
+    
+    html{
+        font-size: 95%;
+    }
+
+    .navbar a{
+        padding: 15px;
+        margin: 0;
+        align-items: left;
+    }
+
+    img{
+        width: 75%;
+        height: 75%;
+    }
+
+    td img{
+        width: 75%;
+        height: 75%;
+    }
+}
+
+@media (max-width:991px) {
+    
+    html{
+        font-size: 70%;
+    }
+
+    #burger-btn {
+        display: block; /*Muestra el menú hamburguesa*/
+    }
+
+    header .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #F7F7F7;
+        border-top: 1px solid #ccc;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+
+    /*SE CONVIERTEN LOS BOTONES DE LAS PESTAÑAS EN COLUMNAS*/
+    header .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header .navbar a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+        border: none;
+    }
+
+    header .navbar.active {
+        display: flex; /*Abre el menú cuando se hace click*/
+    }
+
+    .home{
+        background-position: auto;
+    }
+}
+
+@media (max-width:768px) {
+    
+    html{
+        font-size: 60%;
+    }
+
+    .home{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media (max-width: 680px) and (min-width: 451px) {
+    
+    html{
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width:450px) and (min-width: 250px){ 
+    
+    html{
+        font-size: 50%;
+    }
+
 }

@@ -1,6 +1,8 @@
 *{
     box-sizing: border-box;
     text-decoration: none;
+    border: none;
+    outline: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -129,6 +131,8 @@ footer{
     padding-top: 2rem;
 }
 
+/*MEDIA QUERY*/
+
 @media (max-width:1400px){
     
 }
@@ -136,7 +140,7 @@ footer{
 @media (max-width:1300px) {
     
     html{
-        font-size: 85%;
+        font-size: 95%;
     }
 
     .navbar a{
@@ -146,40 +150,35 @@ footer{
     }
 
     .fotodelosPersonajes{
-        width: 596px;
-        height: 392px;
+        width: 70%;
+        height: 70%;
     }
 
     .fotoSakuta{
-        width: 69%;
-        height: 69%;
+        width: 60%;
+        height: 60%;
     } 
 
     .fotoKaede{
-        width: 65%;
-        height: 65%;
+        width: 80%;
+        height: 80%;
     }
 
     .fotoMai, .fotoRio, .fotoTomoe, .fotoNodoka{
-        width: 40%;
-        height: 40%;
+        width: 55%;
+        height: 55%;
     }
 
     .fotoShoko{
-        width: 60%;
-        height: 60%;
-    }
-
-    table th td{
-        padding: 0;
-        margin: 0px;
+        width: 75%;
+        height: 75%;
     }
 }
 
 @media (max-width:991px) {
     
     html{
-        font-size: 55%;
+        font-size: 70%;
     }
 
     #burger-btn {
@@ -218,17 +217,30 @@ footer{
     .home{
         background-position: auto;
     }
-
 }
 
 @media (max-width:768px) {
+    
+    html{
+        font-size: 60%;
+    }
 
+    .home{
+        margin: 0;
+        padding: 0;
+    }
 }
 
 @media (max-width: 680px) and (min-width: 451px) {
-
+    
+    html{
+        font-size: 55%;
+    }
 }
 
-@media (max-width:450px) and (min-width: 250px){
-
+@media (max-width:450px) and (min-width: 250px){ 
+    
+    html{
+        font-size: 50%;
+    }
 }

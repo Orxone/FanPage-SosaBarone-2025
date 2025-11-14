@@ -1,6 +1,8 @@
 *{
     box-sizing: border-box;
     text-decoration: none;
+    border: none;
+    outline: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -61,6 +63,17 @@ header{
     margin-right: 30px;
 }
 
+#burger-btn {
+    font-size: 3rem;
+    cursor: pointer;
+    display: none;
+    margin-left: 1.5rem;
+}
+
+main{
+    padding-top: 3rem;
+}
+
 main h1{
     font-size: 36px;
     padding: 1rem 9%;
@@ -106,4 +119,79 @@ footer{
     backdrop-filter: blur(15px);
     display: flex;
     padding-left: 15px;
+}
+
+/*MEDIA QUERY*/
+
+@media (max-width:1400px){
+}
+
+@media (max-width:1300px) {
+    
+    .homeContent p{
+        font-size: 90%;    
+    }
+
+    p{
+        font-size: 95%;
+    }
+
+    .navbar a{
+        padding: 15px;
+        margin: 0;
+        align-items: left;
+    }
+
+}
+
+@media (max-width:991px) {
+
+    #burger-btn {
+        display: block; /*Muestra el menú hamburguesa*/
+    }
+
+    header .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #F7F7F7;
+        border-top: 1px solid #ccc;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+
+    /*SE CONVIERTEN LOS BOTONES DE LAS PESTAÑAS EN COLUMNAS*/
+    header .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header .navbar a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+        border: none;
+    }
+
+    header .navbar.active {
+        display: flex; /*Abre el menú cuando se hace click*/
+    }
+
+    .home{
+        background-position: auto;
+    }
+}
+
+@media (max-width:450px) and (min-width: 250px){ 
+    
+    .homeContent p{
+        font-size: 50%;    
+    }
+
+    p{
+        font-size: 50%;
+    }
+
 }
