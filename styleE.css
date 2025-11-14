@@ -89,7 +89,7 @@ table{
     width: 80%;
     border-collapse: collapse;
     margin: 0 auto;
-    background-color: #3a3f7f;
+    background-color: rgba(0, 0, 0, 0.5)
 }
 
 th, td{

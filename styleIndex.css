@@ -177,7 +177,7 @@ header{
     font-size: 16px;
     font-weight: 500;
     pointer-events: none;
-    transition: .5s ease; /*Transcision smooth entre titulo y barra para escribir*/
+    transition: .5s ease; /*Transición smooth entre título y barra para escribir*/
 }
 
 .input-box input:focus~label, 
@@ -225,6 +225,13 @@ header{
     font-size: 16px;
     font-weight: 500;
 }
+
+.btn:hover{ /*Botón de Ingresar*/
+    background-color: #05DBF2;
+    color: white;
+    border: 0.1rem solid black;
+}
+
 
 .form-box .login-register{
     font-size: 15px;

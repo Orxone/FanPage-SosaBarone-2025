@@ -6,7 +6,6 @@
 
 body{
     text-align: center;
-    line-height: 25px;
     background: url(img/classroom.png) no-repeat;
     background-size: cover;
     backdrop-filter: blur(15px);
@@ -22,7 +21,6 @@ header{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-
 }
 
 /*BARRA DE NAVEGACIÓN*/
@@ -62,6 +60,17 @@ header{
     margin-right: 30px;
 }
 
+#burger-btn {
+    font-size: 3rem;
+    cursor: pointer;
+    display: none;
+    margin-left: 1.5rem;
+}
+
+main{
+    padding-top: 3rem;
+}
+
 main h1{
     font-size: 36px;
     padding: 1rem 9%;
@@ -76,22 +85,12 @@ main h2 img{
     margin-right: 5px;
 }
 
-.names{
-    font-size: 20px;
-    font-weight: 600;
-}
-
 .fotodelosPersonajes{
     width: 896px;
     height: 592px;
 }
 
-.fotoMai{
-    width: 450px;
-    height: 450px;
-}
-
-.fotoRio{
+.fotoMai, .fotoRio, .fotoNodoka{
     width: 450px;
     height: 450px;
 }
@@ -101,13 +100,25 @@ main h2 img{
     height: 350px;
 }
 
-.fotoNodoka{
-    width: 450px;
-    height: 450px;
-}
-
 img:hover{
     transform: scale(1.01); /*Zooms in cuando el puntero pasa por encima*/
+}
+
+table{
+    width: 90%;
+    border-collapse: collapse;
+    margin: 2px auto;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+th, td{
+    border: 2px solid #05c7f2;
+    padding: 8px;
+    text-align: center;
+}
+
+th{
+    font-weight: bold;
 }
 
 footer{
@@ -115,4 +126,109 @@ footer{
     backdrop-filter: blur(15px);
     display: flex;
     padding-left: 15px;
+    padding-top: 2rem;
+}
+
+@media (max-width:1400px){
+    
+}
+
+@media (max-width:1300px) {
+    
+    html{
+        font-size: 85%;
+    }
+
+    .navbar a{
+        padding: 15px;
+        margin: 0;
+        align-items: left;
+    }
+
+    .fotodelosPersonajes{
+        width: 596px;
+        height: 392px;
+    }
+
+    .fotoSakuta{
+        width: 69%;
+        height: 69%;
+    } 
+
+    .fotoKaede{
+        width: 65%;
+        height: 65%;
+    }
+
+    .fotoMai, .fotoRio, .fotoTomoe, .fotoNodoka{
+        width: 40%;
+        height: 40%;
+    }
+
+    .fotoShoko{
+        width: 60%;
+        height: 60%;
+    }
+
+    table th td{
+        padding: 0;
+        margin: 0px;
+    }
+}
+
+@media (max-width:991px) {
+    
+    html{
+        font-size: 55%;
+    }
+
+    #burger-btn {
+        display: block; /*Muestra el menú hamburguesa*/
+    }
+
+    header .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #F7F7F7;
+        border-top: 1px solid #ccc;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+
+    /*SE CONVIERTEN LOS BOTONES DE LAS PESTAÑAS EN COLUMNAS*/
+    header .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header .navbar a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+        border: none;
+    }
+
+    header .navbar.active {
+        display: flex; /*Abre el menú cuando se hace click*/
+    }
+
+    .home{
+        background-position: auto;
+    }
+
+}
+
+@media (max-width:768px) {
+
+}
+
+@media (max-width: 680px) and (min-width: 451px) {
+
+}
+
+@media (max-width:450px) and (min-width: 250px){
+
 }

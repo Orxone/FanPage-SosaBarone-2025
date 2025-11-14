@@ -5,7 +5,6 @@
 }
 
 body{
-
     text-align: center;
     background: url(img/Clouds.png) no-repeat;
     background-size: cover;
@@ -76,6 +75,7 @@ main h2 img{
 .homeContent{
     margin-left: 5px;
     margin-right: 5px;
+    line-height: 30px;
 }
 
 .homeContent p{
@@ -93,6 +93,7 @@ main h2 img{
 .mySection{
     font-size: 18px;
     font-style: italic;
+    line-height: 30px;
 }
 
 .bunnyOri{
