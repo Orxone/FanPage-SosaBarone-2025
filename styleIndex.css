@@ -55,6 +55,13 @@ header{
     margin-right: 30px;
 }
 
+#burger-btn {
+    font-size: 3rem;
+    cursor: pointer;
+    display: none;
+    margin-left: 1.5rem;
+}
+
 .container{
     position: absolute;
     top: 50%;
@@ -249,4 +256,82 @@ header{
 .login-register p a:hover{ /*Cuando pasa el cursor por encima de Registrarse*/
     text-decoration: underline;
     color: goldenrod;
+}
+
+/*MEDIA QUERY*/
+
+@media (max-width:1300px) {
+    
+    .html{
+        font-size: 90%;    
+    }
+
+    .navbar a{
+        padding: 15px;
+        margin: 0;
+        align-items: left;
+    }
+
+    .container .content{
+        padding-left: 80px;
+    }
+}
+
+@media (max-width:1000px){
+    
+    header .navbar {
+        padding: 2px;
+    }
+
+    .container .content{
+        padding-left: 60px;
+    }
+}
+
+@media (max-width:991px) {
+
+    #burger-btn {
+        display: block; /*Muestra el menú hamburguesa*/
+    }
+
+    header .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: black;
+        border-top: 1px solid black;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+
+    /*SE CONVIERTEN LOS BOTONES DE LAS PESTAÑAS EN COLUMNAS*/
+    header .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header .navbar a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+        border: none;
+    }
+
+    header .navbar.active {
+        display: flex; /*Abre el menú cuando se hace click*/
+    }
+
+    .home{
+        background-position: auto;
+    }
+}
+
+@media (max-width:450px) and (min-width: 250px){ 
+    
+    .html{
+        font-size: 50%;    
+    }
+
 }
